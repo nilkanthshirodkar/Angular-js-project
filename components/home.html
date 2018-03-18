@@ -1,0 +1,15 @@
+<div id="buttons">
+	<ul class="nav navbar-nav navbar-right">
+        <li><a ng-click="goToLogin()"> Login</a></li>
+        <li><a ng-click="register()"> Register</a></li>
+      </ul>
+
+
+      <div class="card" ng-repeat="u in allRecipe">
+          <img src="{{u.image}}" style="width:100%">
+          <div class="container">
+              <h4><b>{{u.name}}</b></h4> 
+              <p>{{u.ingredient}} </p>
+              <p>{{u.description}} </p>
+        </div>
+</div>
