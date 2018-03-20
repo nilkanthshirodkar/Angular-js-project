@@ -50,33 +50,41 @@
 	</div>  
 		<div>  
 			<p> New Recipe</p>  
-			<table>  
-				<tr>  
-					<td>Name : </td>  
-					<td>  
-						<input type="text" id="txtName" ng-model="recipeName" />  
-					</td>  
-				</tr>  
-				<tr>  
-					<td>image : </td>  
-					<td>  
-						<input type="text" id="txtEmail" ng-model="recipeimage" />  
-					</td>  
-				</tr>  
-				<tr>  
-					<td>ingredient : </td>  
-					<td>  
-						<input type="text" id="txtAddress" ng-model="recipeingredient" />  
-					</td>  
-				</tr>  
-				<tr>  
-					<td>description : </td>  
-					<td>  
-						<input type="text" id="txtdescription" ng-model="recipedescription" />  
-					</td>  
-				</tr>  
-			</table>  
-			<input type="submit" value="Submit" ng-click="AddRecipe()" />  
+		
+			<form action="http://localhost:8080/user/recipeupload" method="post" enctype="multipart/form-data">
+				<input type="hidden" id="userid" name="userid"  ng-model="userid" value="{{userid}}" />
+				<table>  
+						<tr>  
+							<td>Name : </td>  
+							<td>  
+								<input type="text" id="txtName" name="recipeName" />  
+							</td>  
+						</tr>  
+						<tr>  
+		
+							<td>image : </td>  
+							<td>  
+									<input type="file" id="photo" name="photo"/> 
+							</td>  
+						</tr>  
+						<tr>  
+							<td>ingredient : </td>  
+							<td>  
+								<input type="text" id="txtAddress" name="recipeingredient" />  
+							</td>  
+						</tr>  
+						<tr>  
+							<td>description : </td>  
+							<td>  
+								<input type="text" id="txtdescription" name="recipedescription" />  
+							</td>  
+						</tr>  
+						
+					</table>  
+				<button id="Button1">Submit</button>
+				</form>
+
+			<!-- <input type="submit" value="Submit" ng-click="AddRecipe()" />   -->
 		</div>  
 	</div>  
 

@@ -149,7 +149,8 @@ app.controller('registerCtrl', function($scope, $http, $location, user){
 
 app.controller('dashboardCtrl', function($scope, user, $http) {
 	 var data = JSON.parse(localStorage.getItem('login'));
-	 var	id = data.id;
+	 var id = data.id;
+	 $scope.userid = id;
 	
 	$http({
 		url: 'http://localhost:8080/user/recipe',
@@ -164,7 +165,6 @@ app.controller('dashboardCtrl', function($scope, user, $http) {
 	})
 
 
-	//$http.get('http://localhost:8080/user/recipe')
 
 	
 	$scope.AddRecipe = function() {
